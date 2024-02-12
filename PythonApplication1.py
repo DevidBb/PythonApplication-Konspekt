@@ -6,31 +6,35 @@ from math import *
 
 
 
-numbers = [1, 2, 3, 4, 5 ,6 ,7 ,8 ,9]
+from math import *
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 abc = ['Abc', 'B', 'C']
 slovo = "Programmeerimine"
 slovo_list = list(slovo)
 print(slovo)
 print(slovo_list)
+
 while True:
     print("1-добавить букву в список")
-    print("2-склеить списки\n3-добавить букву i - позицию")
+    print("2-склеить списки\n3-добавить букву в позицию")
     print("4-рассмотреть пример кода isspace()")
     print("5-рассмотреть пример кода .replace()")
     print("6-проверить, начинаются ли все слова в строке с заглавной буквы")
-    print("7")
+    print("7-проверить, все ли символы в строке в нижнем регистре")
+    print("8-преобразовать все слова в строке к виду с заглавной буквы")
     valik = int(input())
 
     if valik == 1:
-        a = input("Введи букву")
+        a = input("Введи букву: ")
         slovo_list.append(a)
-        print(f"Добавили {a} новый список", slovo_list)
+        print(f"Добавили {a} в новый список", slovo_list)
     elif valik == 2:
         slovo_list.extend(abc)
         print(slovo_list)
     elif valik == 3:
-        a = input("Введи букву, которую хочешь добавить")
-        i = int(input("Введи номер позиции, куда хочешь добавить букву"))
+        a = input("Введи букву, которую хочешь добавить: ")
+        i = int(input("Введи номер позиции, куда хочешь добавить букву: "))
         slovo_list.insert(i - 1, a)
     elif valik == 4:
         example_code = """
@@ -45,7 +49,7 @@ while True:
         print(example_code)
         print(result)
     elif valik == 5:
-        a = input("Введи букву, которую хочешь удалить")
+        a = input("Введи букву, которую хочешь удалить: ")
         n = slovo_list.count(a)
         if n > 0:
             for i in range(n):
@@ -58,12 +62,14 @@ while True:
         else:
             print("Не все слова в строке начинаются с заглавной буквы.")
     elif valik == 7:
-        if any(char.isdigit() for char in a):
-            a.append("Number")
+        s = input("Введите строку: ")
+        if s.islower():
+            print("Все символы в строке находятся в нижнем регистре.")
+        else:
+            print("Не все символы в строке находятся в нижнем регистре.")
     elif valik == 8:
-        a=input("Введите слово или набор слов с маленькой и большой буквы\n")
-        i=a.title()
-        print(1)
+        s = input("Введите строку с разным регистром слов: ")
+        print("Преобразованные слова к виду с заглавной буквы:", s.title())
 
 
 
