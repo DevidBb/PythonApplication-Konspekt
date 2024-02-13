@@ -72,6 +72,29 @@ while True:
         print("Преобразованные слова к виду с заглавной буквы:", s.title())
 
 
+  nimed=[]
+for i in range(5):
+        nimi=input(f"Sisetage {i+1}. nimi: ").capitalize()
+        nimed.append(nimi)
+        
+        print("Max: ",nimed)
+        nimed.sort()
+        print("Sortimise parast: ",nimed)
+        print("Viimasena oli lisatud: ",nimi)
+
+        vananimi=input("Mis nimi on vaja asendada? ")
+        if nimed.count(vananimi)>0:
+            uusnimi=input("Mis on uus nimi?")
+            i=0
+            for nimi in nimed:
+                if nimi==vananimi:
+                    vananimi.replace(vananimi,uusnimi)
+                    nimed[i]=uusnimi
+                i+=1
+        else:
+            print(f"{vananimi} ei ole")
+        print(nimed)
+
 
 #print("Меню:")
 #print("1. Салаты")
